@@ -1,18 +1,21 @@
 function getShippingCost(country) {
   let message;
 
-  // Оператор switch для определения стоимости доставки
-  switch (country) {
-    case 'China':
+  // Приводим название страны к нижнему регистру для независимости от регистра
+  const normalizedCountry = country.toLowerCase();
+
+  // Используем switch для проверки стран и соответствующих цен
+  switch (normalizedCountry) {
+    case 'china':
       message = `Shipping to China will cost 100 credits`;
       break;
-    case 'Chile':
+    case 'chile':
       message = `Shipping to Chile will cost 250 credits`;
       break;
-    case 'Australia':
+    case 'australia':
       message = `Shipping to Australia will cost 170 credits`;
       break;
-    case 'Jamaica':
+    case 'jamaica':
       message = `Shipping to Jamaica will cost 120 credits`;
       break;
     default:
