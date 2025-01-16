@@ -1,30 +1,31 @@
 function getShippingCost(country) {
-  let shippingCost;
+  let message;
 
   // Оператор switch для определения стоимости доставки
-  switch (country.toLowerCase()) {
-    case 'usa':
-      shippingCost = 10;
+  switch (country) {
+    case 'China':
+      message = `Shipping to China will cost 100 credits`;
       break;
-    case 'canada':
-      shippingCost = 15;
+    case 'Chile':
+      message = `Shipping to Chile will cost 250 credits`;
       break;
-    case 'uk':
-      shippingCost = 20;
+    case 'Australia':
+      message = `Shipping to Australia will cost 170 credits`;
       break;
-    case 'australia':
-      shippingCost = 25;
+    case 'Jamaica':
+      message = `Shipping to Jamaica will cost 120 credits`;
       break;
     default:
-      shippingCost = 30; // Стоимость для других стран
+      message = "Sorry, there is no delivery to your country";
   }
 
-  return shippingCost;
+  return message;
 }
 
 // Проверка функции с разными странами
-console.log(getShippingCost("USA")); // 10
-console.log(getShippingCost("Canada")); // 15
-console.log(getShippingCost("UK")); // 20
-console.log(getShippingCost("Australia")); // 25
-console.log(getShippingCost("Germany")); // 30
+console.log(getShippingCost("Australia")); // "Shipping to Australia will cost 170 credits"
+console.log(getShippingCost("Germany")); // "Sorry, there is no delivery to your country"
+console.log(getShippingCost("China")); // "Shipping to China will cost 100 credits"
+console.log(getShippingCost("Chile")); // "Shipping to Chile will cost 250 credits"
+console.log(getShippingCost("Jamaica")); // "Shipping to Jamaica will cost 120 credits"
+console.log(getShippingCost("Sweden")); // "Sorry, there is no delivery to your country"
